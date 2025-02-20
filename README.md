@@ -71,17 +71,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-Doc:
+# Doc:
 
 primero fue crear el dockerfile, viendo la documentación sabemos que es un node y una versión nueva por algo que me di cuenta más tarde
 
-creado el dockerfile usamos una imagen de node, corremos el npm install para construir la app y dejamos el cmd [“npm”, “start”] para correr la app
+creado el dockerfile usamos una imagen de node, corremos el npm install para construir la app y dejamos el cmd [“npm”, “start”] para correr la app, para esto se modifica el package.json con el script:  "start": "react-scripts start", para que corra
+
 
 Para probar la app la podemos construir usando docker build -t mi-app . 
 
 y la podemos correr con: docker run -p 3000:3000 mi-app (usando 3000 porque es el puerto al que expone la app)
 
+En la accion tenemos los seguientes pasos:
+
+copiamos el codigo, montamos en node, instalamos las dependencias, hacemos el docker buildx, ingresamos al docker hub y buildeamos la imagen
+
+![los secretos:](./Screenshot%202025-02-19%20at%208.06.25-PM.png)
 una vez veamos que funcione, es tiempo de hacer la acción, esta va con secretos por lo sugerido del profesor
 
+para esto tambien creamos un token de accesso en docker hub
+
+![Token docker:](./Screenshot%202025-02-19%20at%208.06.41-PM.png)
+
 Si la acción funciona, la imagen debería estar en dockerhub
+
+![imagen en docker hub](./Screenshot%202025-02-19%20at%208.07.04-PM.png)
 
