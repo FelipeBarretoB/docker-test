@@ -40,5 +40,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: felipeBarreto/docker-imagen:latest  
+          tags: pipebarreto/docker-imagen:latest  
 

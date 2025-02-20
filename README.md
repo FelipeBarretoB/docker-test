@@ -69,3 +69,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Doc:
+
+primero fue crear el dockerfile, viendo la documentación sabemos que es un node y una versión nueva por algo que me di cuenta más tarde
+
+creado el dockerfile usamos una imagen de node, corremos el npm install para construir la app y dejamos el cmd [“npm”, “start”] para correr la app
+
+Para probar la app la podemos construir usando docker build -t mi-app . 
+
+y la podemos correr con: docker run -p 3000:3000 mi-app (usando 3000 porque es el puerto al que expone la app)
+
+una vez veamos que funcione, es tiempo de hacer la acción, esta va con secretos por lo sugerido del profesor
+
+Si la acción funciona, la imagen debería estar en dockerhub
+
